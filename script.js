@@ -1,24 +1,35 @@
 // Assignment Code
+// Sets button variable
 var generateBtn = document.querySelector("#generate");
 
 // User Input
-var setLength
-var selectUp
-var selectLow
-var selectNumeric
-var selectSpecial
-var bingo
+// Sets selection variables
+var setLength;
+var selectUp;
+var selectLow;
+var selectNumeric;
+var selectSpecial;
+var bingo;
 
-eSpecial = []
-eNumeric = []
-eUp = []
-eLow = []
+// Arrays
+eSpecial = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+eNumeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+eUp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+eLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+/* FUTURE NOTE: This is not the most effective way to do this, but it's the most familiar to me, at this point!
+Arrays could easily been *character codes* - which would have been much easier to manage! */
 
+// Event listener for click of the Generate button
+// Getit var listens for button click, verifies password generation
+var getit = document.querySelector("#generate");
 
-generateBtn.addEventListener("click", writePassword);
+getit.addEventListener("click", function () {
+    nPassword = pppassword();
+    document.getElementById("password").placeholder = nPassword;
+});
 
-
-// Function
+// FUNCTION - if else, else if
+/* FUTURE NOTES: This could have been drastically simplified, but it's comfortable and it works. */
 
 function pppassword() {
   // Prompts for PW length:
@@ -28,7 +39,8 @@ function pppassword() {
       alert("This needs a value");
   } else if (setLength < 8 || setLength > 128) {
       setLength = parseInt(prompt("You must choose between 8 and 128"));
-  // Prompts for user selections:
+    
+      // Prompts for user selections:
   } else {
     selectNumeric = confirm("Will your password contain numbers?");
     selectSpecial = confirm("Will your password contain special characters?");
@@ -40,7 +52,7 @@ function pppassword() {
     bingo = alert("You must make at least (1) selection!");
   }
   // SELECTIONS - All items selected; (4) total
-  // CONCAT as in concatinate
+  // CONCAT - as in concatinate
   else if (selectNumeric && selectSpecial && selectUp && selectLow) {
     bingo = eSpecial.concat(eNumeric, eUp, eLow);
   }
@@ -92,11 +104,15 @@ function pppassword() {
 
 var password = [];
   // Password variable is an array "placeholder"
-  // 
+  // Parameters indicate iterator is 0, the condition to meet is i should be less than the setLength, i++ indicates the increment should increase
+  // We use Math.random to return a random number and Math.floor to return random integers to generate bongo
+  // We use bingo.length to specify we want our results to be the length of bingo, which is the result of the user input
+  // Push adds to end of bongo
   for (var i = 0; i < setLength; i++){
     var bongo = bingo[Math.floor(Math.random() * bingo.length)];
     password.push(bongo);
   }
+  // Join returns our array as a string
   var nPassword = password.join("");
   UserInput(nPassword);
   return nPassword;
@@ -104,27 +120,7 @@ var password = [];
 // Places our fresh password into the textbox
 function UserInput(nPassword) {
   document.getElementById("password").textContent = nPassword;
-
-
-
-
-
-
-// Write password to the #password input
-//function writePassword() {
-//  var password = generatePassword();
-//  var passwordText = document.querySelector("#password");
-
-//  passwordText.value = password;
-
-
-
-
-
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
-
+}
 
 /*
 GIVEN I need a new, secure password
@@ -142,5 +138,4 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
-```
 */
