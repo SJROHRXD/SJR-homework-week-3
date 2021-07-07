@@ -13,4 +13,5 @@ When the user selects a character type to include in their password generation, 
 At least one character type is required ✔
 The password generated matches the selected criteria and is displayed ✔
 
-
+## Design Notes 
+I've seen other password generators that use much simpler *methods* to both place character data in arrays and also refer to those arrays when generating the password. However, this is built with what I felt I could actually explain to someone else!
