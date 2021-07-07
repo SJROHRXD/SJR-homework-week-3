@@ -5,6 +5,8 @@ Random Password Generator w/ Prompts
 https://sjrohrxd.github.io/SJR-homework-week-3/
 
 ![alt text](https://github.com/SJROHRXD/SJR-homework-week-3/blob/main/pwgenimages/1pwgen.png?raw=true)
+![alt text](https://github.com/SJROHRXD/SJR-homework-week-3/blob/main/pwgenimages/2pwgen.png?raw=true)
+
 
 ## Project Description
 
