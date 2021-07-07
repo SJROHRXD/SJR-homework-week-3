@@ -4,6 +4,8 @@ Random Password Generator w/ Prompts
 
 https://sjrohrxd.github.io/SJR-homework-week-3/
 
+![alt text](https://github.com/SJROHRXD/SJR-homework-week-3/blob/main/pwgenimages/1pwgen.png?raw=true)
+
 ## Project Description
 
 This is a 'random password generator' that accepts input via prompts. The user can select between 8 and 128 characters, and whether or not they'd like their password to include lowercase letters, uppercase letters, special characters and/or numbers. Upon button click, the prompts cycle to collect the user input, then eventually result in a secure password, which is displayed in the designated html textarea.
