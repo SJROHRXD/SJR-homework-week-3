@@ -1,5 +1,5 @@
 // Assignment Code
-// Sets button variable
+// Sets button variable, looks for generate id in html
 var generateBtn = document.querySelector("#generate");
 
 // User Input
